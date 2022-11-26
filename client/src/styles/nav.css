@@ -26,5 +26,5 @@ li a {
 }
 
 a:hover {
-  color: rgb(39, 175, 39);
+  color: rgb(39, 175, 39) !important;
 }
