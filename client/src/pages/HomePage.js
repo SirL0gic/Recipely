@@ -18,7 +18,7 @@ let Home = () => {
   document.body.style.background = "#28C76F";
   return (
     <div className="menu-box">
-      <h1>Recipely</h1>
+      <h1 className="main-heading"> &#127836; Recipely  &#127836;</h1>
       <div className="entire-nav">
         <ul>
           <li>
