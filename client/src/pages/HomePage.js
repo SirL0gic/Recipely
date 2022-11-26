@@ -22,7 +22,7 @@ let Home = () => {
       <div className="entire-nav">
         <ul>
           <li>
-            <Link to="/">About Us</Link>
+            <Link to="/about-us">About Us</Link>
           </li>
           <li>
             <Link to="/create">Create Recipe</Link>

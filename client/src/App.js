@@ -2,7 +2,7 @@ import "./styles/App.css";
 import { Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "./pages/HomePage";
-import Lol from "./pages/TestPage";
+import Lol from "./pages/AboutUsPage";
 
 function App() {
   return (
