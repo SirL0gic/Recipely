@@ -1,6 +1,9 @@
 //Base React libs
 import React from "react";
 
+//Import Components
+import RecipeForm from "../components/Form"
+
 let Create = () => {
     return (
         <div className="aboutus-box">
