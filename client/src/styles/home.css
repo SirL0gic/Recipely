@@ -16,33 +16,3 @@
   margin-top: 30px;
 }
 
-.entire-nav{
-  font-size: 30px;
-
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.788);
-}
-
-li:last-child {
-  border-right: none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  border-style:dashed;
-  margin: 20px;
-}
-
-a:hover {
-  color: rgb(39, 175, 39);
-}
