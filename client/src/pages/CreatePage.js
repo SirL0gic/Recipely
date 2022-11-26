@@ -9,3 +9,5 @@ let Create = () => {
     )
 }
 
+export default Create;
+
