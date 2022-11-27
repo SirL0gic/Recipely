@@ -2,7 +2,8 @@
 import React from "react";
 
 //Bootstrap-npm-lib
-import Button from "react-bootstrap/Button";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 //Bootstrap-Bundle-JS-CSS
 import "bootstrap/dist/js/bootstrap.bundle.min";
