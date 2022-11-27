@@ -1,2 +1,2 @@
 # Recipely
-A food based web application in React JS. 
+An open source SaaS - food based web application in React JS. 
