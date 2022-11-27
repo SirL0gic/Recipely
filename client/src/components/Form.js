@@ -18,6 +18,10 @@ function RecipeForm() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Recipe</Form.Label>
         <Form.Control type="text" placeholder="Enter title" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Form.Label>Author</Form.Label>
+        <Form.Control type="text" placeholder="Enter author name" />
+        <Form.Label>Ingridents</Form.Label>
+        <Form.Control type="text" placeholder="Enter author name" />
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit
