@@ -15,7 +15,7 @@ import "../styles/create.css";
 
 let RecipeForm = () => {
 
-  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
 
   return (
     <Form className="form-container">
@@ -24,8 +24,8 @@ let RecipeForm = () => {
         <Form.Control
           type="text"
           placeholder="Enter title"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <br></br>
         <Form.Label>Author</Form.Label>
@@ -43,7 +43,7 @@ let RecipeForm = () => {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-      <p>{email}</p>
+      <p>{title}</p>
     </Form>
   );
 }
