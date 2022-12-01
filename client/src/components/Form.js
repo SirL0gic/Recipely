@@ -13,7 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Custom CSS stylesheet
 import "../styles/create.css";
 
-function RecipeForm() {
+let RecipeForm = () => {
+
   const [email, setEmail] = useState("");
 
   return (
