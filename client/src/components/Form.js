@@ -42,7 +42,7 @@ let RecipeForm = () => {
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
         <br></br>
-        <Form.Label>Small file input example</Form.Label>
+        <Form.Label>Upload a picture</Form.Label>
         <Form.Control type="file" size="sm" />
       </Form.Group>
       <div className="text-center">
