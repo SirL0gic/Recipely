@@ -30,3 +30,7 @@
     background-color: #212529;
     color: rgb(39, 175, 39) !important;
   }
+
+.form-labels {
+    font-weight: bold;
+}

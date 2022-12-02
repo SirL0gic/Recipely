@@ -20,7 +20,7 @@ let RecipeForm = () => {
   return (
     <Form className="form-container">
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Recipe</Form.Label>
+        <Form.Label className="form-labels">Recipe</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter title"
@@ -28,21 +28,21 @@ let RecipeForm = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <br></br>
-        <Form.Label>Author</Form.Label>
+        <Form.Label className="form-labels">Author</Form.Label>
         <Form.Control type="text" placeholder="Enter author name" />
         
         <Form.Label></Form.Label>
         <InputGroup>
-          <InputGroup.Text>Ingredients</InputGroup.Text>
+          <InputGroup.Text className="form-labels">Ingredients</InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
         <br></br>
         <InputGroup>
-          <InputGroup.Text>Steps</InputGroup.Text>
+          <InputGroup.Text >Steps</InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
         <br></br>
-        <Form.Label>Upload a picture</Form.Label>
+        <Form.Label >Upload a picture</Form.Label>
         <Form.Control type="file" size="sm" />
       </Form.Group>
       <div className="text-center">
