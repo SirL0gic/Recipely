@@ -45,9 +45,12 @@ let RecipeForm = () => {
         <Form.Label>Small file input example</Form.Label>
         <Form.Control type="file" size="sm" />
       </Form.Group>
-      <Button className="submit-button" variant="primary" type="submit">
+      <div className="text-center">
+      <Button className="submit-button" variant="dark" type="submit">
         Submit
       </Button>
+      <Button className="back-button" variant="dark" href="/">Go Back</Button>
+      </div>
       <p>{title}</p>
     </Form>
   );

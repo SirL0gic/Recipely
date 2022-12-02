@@ -17,4 +17,16 @@
 
 .submit-button {
     text-align: center;
+    margin-top: 10px;
+    background-color: #212529;
 }
+
+.back-button{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.submit-button:hover {
+    background-color: #212529;
+    color: rgb(39, 175, 39) !important;
+  }
