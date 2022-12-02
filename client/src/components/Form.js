@@ -33,16 +33,16 @@ let RecipeForm = () => {
         
         <Form.Label></Form.Label>
         <InputGroup>
-          <InputGroup.Text className="form-labels">Ingredients</InputGroup.Text>
+          <InputGroup.Text>Ingredients</InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
         <br></br>
         <InputGroup>
-          <InputGroup.Text >Steps</InputGroup.Text>
+          <InputGroup.Text>Steps</InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
         <br></br>
-        <Form.Label >Upload a picture</Form.Label>
+        <Form.Label className="form-labels">Upload a picture</Form.Label>
         <Form.Control type="file" size="sm" />
       </Form.Group>
       <div className="text-center">
