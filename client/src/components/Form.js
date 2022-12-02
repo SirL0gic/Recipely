@@ -36,6 +36,10 @@ let RecipeForm = () => {
           <InputGroup.Text>Ingredients</InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" />
         </InputGroup>
+        <InputGroup>
+          <InputGroup.Text>Steps</InputGroup.Text>
+          <Form.Control as="textarea" aria-label="With textarea" />
+        </InputGroup>
         <br></br>
         <Form.Label>Small file input example</Form.Label>
         <Form.Control type="file" size="sm" />
