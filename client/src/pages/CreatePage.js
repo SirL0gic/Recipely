@@ -10,7 +10,7 @@ import "../styles/create.css";
 let Create = () => {
     return (
         <div className="form-box">
-            <h1 className="main-heading"> &#128296; Create a Recipe &#128296;</h1>
+            <h1 className="main-heading"> &#128296; Create the Recipe &#128296;</h1>
             <RecipeForm />
         </div>
     )
