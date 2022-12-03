@@ -14,26 +14,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/create.css";
 
 let RecipeForm = () => {
+  // e is the event object
 
-    const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState("");
-    const [ingredients, setIngredients] = useState("");
-    const [steps, setSteps] = useState("");
-    const [picture, setPic] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [steps, setSteps] = useState("");
+  const [picture, setPic] = useState("");
 
-
-    let handleSubmit = (eventobject) => {
+  let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
     window.location.replace("http://www.w3schools.com");
-    
 
-    const recipeData = {title, author, ingredients, steps, picture}
+    const recipeData = { title, author, ingredients, steps, picture };
     console.log("Server Log: " + recipeData);
-    
-};
-
-  
+  };
 
   return (
     <Form className="form-container" onSubmit={handleSubmit}>
@@ -47,29 +43,44 @@ let RecipeForm = () => {
         />
         <br></br>
         <Form.Label className="form-labels">Author</Form.Label>
-        <Form.Control type="text" placeholder="Enter author name" />
+        <Form.Control
+          type="text"
+          placeholder="Enter author name"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
 
         <Form.Label></Form.Label>
         <InputGroup>
           <InputGroup.Text>Ingredients</InputGroup.Text>
-          <Form.Control as="textarea" aria-label="With textarea" />
+          <Form.Control
+            as="textarea"
+            aria-label="With textarea"
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+          />
         </InputGroup>
         <br></br>
         <InputGroup>
           <InputGroup.Text>Steps</InputGroup.Text>
-          <Form.Control as="textarea" aria-label="With textarea" />
+          <Form.Control
+            as="textarea"
+            aria-label="With textarea"
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
+          />
         </InputGroup>
         <br></br>
         <Form.Label className="form-labels">Upload a picture</Form.Label>
-        <Form.Control type="file" size="sm" />
+        <Form.Control
+          type="file"
+          size="sm"
+          value={picture}
+          onChange={(e) => setPic(e.target.value)}
+        />
       </Form.Group>
       <div className="text-center">
-        <Button
-          className="submit-button"
-          variant="dark"
-          type="submit"
-          onChange={(e) => setTitle(e.target.value)}
-        >
+        <Button className="submit-button" variant="dark" type="submit">
           Submit
         </Button>
         <Button className="back-button" variant="dark" href="/">
