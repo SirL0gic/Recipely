@@ -21,15 +21,17 @@ let RecipeForm = () => {
     const [steps, setSteps] = useState("");
     const [picture, setPic] = useState("");
 
-    
+
     let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
     window.location.replace("http://www.w3schools.com");
     
 
-    const recipeData = {}
-    };
+    const recipeData = {title, author, ingredients, steps, picture}
+    console.log("Server Log: " + recipeData);
+    
+};
 
   
 
