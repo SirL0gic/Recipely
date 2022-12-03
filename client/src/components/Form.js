@@ -15,8 +15,8 @@ import "../styles/create.css";
 
 let RecipeForm = () => {
 
-    function handleSubmit(x) {
-        x.preventDefault();
+    function handleSubmit(eventobject) {
+        eventobject.preventDefault();
         console.log('You clicked submit.');
         window.location.replace("http://www.w3schools.com");
       }
