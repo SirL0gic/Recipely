@@ -15,14 +15,18 @@ import "../styles/create.css";
 
 let RecipeForm = () => {
 
-    function handleSubmit(eventobject) {
-        eventobject.preventDefault();
-        console.log('You clicked submit.');
-        window.location.replace("http://www.w3schools.com");
-      }
+    const [title, setTitle] = useState("");
 
-  const [title, setTitle] = useState("");
+    let handleSubmit = (eventobject) => {
+    eventobject.preventDefault();
+    console.log("Data submitted");
+    window.location.replace("http://www.w3schools.com");
+    
 
+    const recipeData = {}
+    };
+
+  
 
   return (
     <Form className="form-container" onSubmit={handleSubmit}>
@@ -37,7 +41,7 @@ let RecipeForm = () => {
         <br></br>
         <Form.Label className="form-labels">Author</Form.Label>
         <Form.Control type="text" placeholder="Enter author name" />
-        
+
         <Form.Label></Form.Label>
         <InputGroup>
           <InputGroup.Text>Ingredients</InputGroup.Text>
@@ -53,14 +57,21 @@ let RecipeForm = () => {
         <Form.Control type="file" size="sm" />
       </Form.Group>
       <div className="text-center">
-      <Button className="submit-button" variant="dark" type="submit" onChange={(e) => setTitle(e.target.value)}>
-        Submit
-      </Button>
-      <Button className="back-button" variant="dark" href="/">Go Back</Button>
+        <Button
+          className="submit-button"
+          variant="dark"
+          type="submit"
+          onChange={(e) => setTitle(e.target.value)}
+        >
+          Submit
+        </Button>
+        <Button className="back-button" variant="dark" href="/">
+          Go Back
+        </Button>
       </div>
       <p>{title}</p>
     </Form>
   );
-}
+};
 
 export default RecipeForm;
