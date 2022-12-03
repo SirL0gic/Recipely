@@ -25,10 +25,10 @@ let RecipeForm = () => {
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
-    window.location.replace("http://www.w3schools.com");
+    // window.location.replace("http://www.w3schools.com");
 
     const recipeData = { title, author, ingredients, steps, picture };
-    console.log("Server Log: " + recipeData);
+    console.log("Server Log: " + JSON.stringify(recipeData));
   };
 
   return (
