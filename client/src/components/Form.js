@@ -16,7 +16,12 @@ import "../styles/create.css";
 let RecipeForm = () => {
 
     const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [ingredients, setIngredients] = useState("");
+    const [steps, setSteps] = useState("");
+    const [picture, setPic] = useState("");
 
+    
     let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
