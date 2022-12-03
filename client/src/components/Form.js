@@ -15,11 +15,17 @@ import "../styles/create.css";
 
 let RecipeForm = () => {
 
+    function handleSubmit(x) {
+        x.preventDefault();
+        console.log('You clicked submit.');
+        window.location.replace("http://www.w3schools.com");
+      }
+
   const [title, setTitle] = useState("");
-  
+
 
   return (
-    <Form className="form-container">
+    <Form className="form-container" onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className="form-labels">Recipe</Form.Label>
         <Form.Control
@@ -47,7 +53,7 @@ let RecipeForm = () => {
         <Form.Control type="file" size="sm" />
       </Form.Group>
       <div className="text-center">
-      <Button className="submit-button" variant="dark" type="submit">
+      <Button className="submit-button" variant="dark" type="submit" onChange={(e) => setTitle(e.target.value)}>
         Submit
       </Button>
       <Button className="back-button" variant="dark" href="/">Go Back</Button>

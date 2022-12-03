@@ -21,9 +21,6 @@ let Menu = () => {
         <li>
           <Link to="/suggest">Suggest Recipe</Link>
         </li>
-        <li>
-          <Link to="/share">Share</Link>
-        </li>
       </ul>
     </div>
   );
