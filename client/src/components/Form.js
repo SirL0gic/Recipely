@@ -37,7 +37,6 @@ let RecipeForm = () => {
     };
 
     console.log("Server Log: " + JSON.stringify(recipeData));
-    console.log("Server Log: " + recipeData);
 
     // fetch('http://localhost:3000/db.json')
     // .then((response) => response.json())
