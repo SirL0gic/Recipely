@@ -25,10 +25,25 @@ let RecipeForm = () => {
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
-    // window.location.replace("http://www.w3schools.com");
+    
 
-    const recipeData = { title, author, ingredients, steps, picture };
+    const recipeData = { 
+    recipe_name: title,
+    recipe_author: author,
+    recipe_ingredients: ingredients,
+    recipe_directions: steps,
+    recipe_image: picture,
+
+    };
+
     console.log("Server Log: " + JSON.stringify(recipeData));
+    console.log("Server Log: " + recipeData);
+
+    fetch('http://localhost:3000/db.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+    // window.location.replace("http://www.w3schools.com");
   };
 
   return (
