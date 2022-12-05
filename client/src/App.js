@@ -18,6 +18,3 @@ function App() {
 }
 
 export default App;
-
-
-//remove comment 
