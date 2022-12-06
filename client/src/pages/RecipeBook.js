@@ -1,10 +1,15 @@
 //Base React libs
-import React from "react";
+import React, { useState } from 'react'
 
 //Bootstrap-npm-lib
 import Row from "react-bootstrap/Row"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col";
+
+
+//material UI 
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/lab/Autocomplete';
 
 //Bootstrap-Bundle-JS-CSS
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -26,7 +31,11 @@ let Book = () => {
                     </div>
                 </Col>
             </Row>
-            <Row></Row>
+            <Row className="row-two" id="searchbar-row">
+                <Col className="col-two">
+
+                </Col>
+            </Row>
         </Container>
     )
     

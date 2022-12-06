@@ -66,7 +66,18 @@ a:hover {
   margin-top: 20px;
 }
 
-#main-title-box{
+/* #main-title-box{
   border-radius: 10px;
   border-style: solid;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */
+
+.main-container-book{
+  margin-top: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: white;
+
 }
