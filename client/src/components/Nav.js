@@ -16,7 +16,7 @@ let Menu = () => {
           <Link to="/create">Create Recipe</Link>
         </li>
         <li>
-          <Link to="/search">Search Recipe</Link>
+          <Link to="/search">Recipe Book</Link>
         </li>
         <li>
           <Link to="/suggest">Suggest Recipe</Link>
