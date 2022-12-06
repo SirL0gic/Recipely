@@ -15,6 +15,8 @@ import Autocomplete from '@mui/lab/Autocomplete';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import RecipeReviewCard from '../components/Card';
+
 //Custom CSS stylesheet
 import "../styles/main.css";
 
