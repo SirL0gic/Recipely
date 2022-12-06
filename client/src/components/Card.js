@@ -52,7 +52,7 @@ export default function RecipeReviewCard() {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image="https://iamafoodblog.b-cdn.net/wp-content/uploads/2012/07/paella-9174.jpg"
         alt="Paella dish"
       />
       <CardContent>

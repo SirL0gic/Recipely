@@ -35,8 +35,10 @@ let Book = () => {
             </Row>
             <Row className="row-two" id="searchbar-row">
                 <Col className="col-two">
-
                 </Col>
+            </Row>
+            <Row>
+                <RecipeReviewCard />
             </Row>
         </Container>
     )
