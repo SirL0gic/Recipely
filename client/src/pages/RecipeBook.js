@@ -11,3 +11,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Custom CSS stylesheet
 import "../styles/aboutus.css";
 
+let Book = () => {
+    
+    
+};
+
+export default Book;
