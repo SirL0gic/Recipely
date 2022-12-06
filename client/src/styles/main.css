@@ -1,0 +1,72 @@
+/* navigation page */
+.entire-nav {
+  font-size: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 0px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.788);
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-style: dashed;
+  margin: 20px;
+}
+
+a:hover {
+  color: rgb(39, 175, 39) !important;
+}
+
+
+/* about us page */
+.aboutus-box {
+  min-width: 500px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+
+.information-box {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+
+.information-para {
+  font-weight: bold;
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+
+/* recipe book page */
+
+#title-row {
+  margin-top: 20px;
+}
+
+#main-title-box{
+  border-radius: 10px;
+  border-style: solid;
+}

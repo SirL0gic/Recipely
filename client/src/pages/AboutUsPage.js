@@ -9,7 +9,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Custom CSS stylesheet
-import "../styles/aboutus.css";
+import "../styles/main.css";
 
 let About = () => {
   document.body.style.background = "#28C76F";

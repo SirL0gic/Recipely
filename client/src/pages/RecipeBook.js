@@ -11,14 +11,19 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //Custom CSS stylesheet
-import "../styles/aboutus.css";
+import "../styles/main.css";
 
 let Book = () => {
+    document.body.style.background = "#28C76F";
     return(
         <Container className="main-container-book">
-            <Row className="row-one">
+            <Row className="row-one" id="title-row">
                 <Col className="col-one">
-                    
+                    <div className="main-title" id="main-title-box">
+                        <div className="text-center">
+                            <h1>Recipe Book</h1>
+                        </div>
+                    </div>
                 </Col>
             </Row>
             <Row></Row>

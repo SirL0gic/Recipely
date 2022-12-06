@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //Custom CSS stylesheet
-import "../styles/nav.css";
+import "../styles/main.css";
 
 let Menu = () => {
   return (
