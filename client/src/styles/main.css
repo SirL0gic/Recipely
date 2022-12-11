@@ -1,3 +1,14 @@
+@media only screen and (max-width: 480px) {
+  .main-container-book{
+    margin-top: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: white;
+    width: 95% !important;
+  
+  }
+}
+
 /* navigation page */
 .entire-nav {
   font-size: 30px;
