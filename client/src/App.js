@@ -3,7 +3,7 @@ import React from "react";
 import Home from "./pages/HomePage";
 import About from "./pages/AboutUsPage";
 import Create from "./pages/CreatePage";
-import Book from "./pages/RecipeBook";
+import Book from "./pages/RecipeBookPage";
 
 function App() {
   return (
