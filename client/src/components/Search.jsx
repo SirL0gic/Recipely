@@ -1,16 +1,20 @@
 
 
+
+import ReactDOM from 'react-dom';
 //Base React libs
 import React, { useState } from "react";
 
 //Bootstrap-npm-lib
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
+
 
 //Bootstrap-Bundle-JS-CSS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import RecipeReviewCard from "../components/Card";
 
 //Custom CSS stylesheet
 import "../styles/create.css";
@@ -29,10 +33,21 @@ let SearchBar = () => {
 
     console.log("Server Log: " + JSON.stringify(recipeData));
 
-    var b = g
 
-    var a = document.getElementById("recipe-cardslist");
-    console.log("we got it",a)
+    function removeElementsByClass(className){
+        const elements = document.getElementsByClassName(className);
+        while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    };
+
+    removeElementsByClass("cols");
+
+    
+    ReactDOM.render(<RecipeReviewCard />, document.getElementById('recipe-cardslist'));
+   
+
+    
     // fetch('http://localhost:3000/db.json')
     // .then((response) => response.json())
     // .then((json) => console.log(json));
