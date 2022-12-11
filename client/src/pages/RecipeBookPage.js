@@ -11,6 +11,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import RecipeReviewCard from "../components/Card";
+import SearchBar from "../components/Search";
 
 //Custom CSS stylesheet
 import "../styles/main.css";
@@ -29,7 +30,11 @@ let Book = () => {
         </Col>
       </Row>
       <Row className="row-two" id="searchbar-row">
-        <Col className="col-two"></Col>
+        <Col className="col-two">
+        <div className="text-center">
+        <SearchBar />
+        </div>
+        </Col>
       </Row>
       <Row className="row-three" id="recipe-cardslist">
         <Col className="cols">

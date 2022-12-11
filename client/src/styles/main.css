@@ -97,3 +97,8 @@ a:hover {
 .cols{
   margin-bottom: 50px;
 }
+
+#searchbar-row{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
