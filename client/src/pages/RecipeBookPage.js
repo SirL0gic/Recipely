@@ -23,7 +23,7 @@ let Book = () => {
         <Col className="col-one">
           <div className="main-title" id="main-title-box">
             <div className="text-center">
-              <h1>Recipe Book</h1>
+              <h1> 	&#128214; Recipe Book 	&#128214;</h1>
             </div>
           </div>
         </Col>
@@ -32,26 +32,26 @@ let Book = () => {
         <Col className="col-two"></Col>
       </Row>
       <Row className="row-three" id="recipe-cardslist">
-        <Col className="col-three">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
-        <Col className="col-four">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
-        <Col className="col-five">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
       </Row>
       <br></br>
       <br></br>
       <Row className="row-four" id="recipe-cardslist-two">
-        <Col className="col-six">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
-        <Col className="col-seven">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
-        <Col className="col-eight">
+        <Col className="cols">
           <RecipeReviewCard />
         </Col>
       </Row>
