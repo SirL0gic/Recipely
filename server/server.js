@@ -1,8 +1,11 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); // for cross orgin requests
+const bodyParser = require('body-parser'); // fot handling request body
 const app = express();
 
 app.use(cors());  // Enable CORS for all routes
+
+app.use(bodyParser.json());  // Parse JSON request bodies
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
@@ -13,7 +16,7 @@ app.post('/test', (req, res) => {
   // console.log(data);  // Log the data to the console
 
   // Do something with the data here, such as saving it to a database
-  console.log("this is the data",JSON.stringify(data));
+  console.log("this is the data",data);
 
   res.send({ message: 'Data received' });  // Send a response back to the frontend
 });
