@@ -10,6 +10,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import axios from "axios";
+
 //Custom CSS stylesheet
 import "../styles/create.css";
 
@@ -25,24 +27,28 @@ let RecipeForm = () => {
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
-    
 
-    const recipeData = { 
-    recipe_name: title,
-    recipe_author: author,
-    recipe_ingredients: ingredients,
-    recipe_directions: steps,
-    recipe_image: picture,
-
+    const recipeData = {
+      recipe_name: title,
+      recipe_author: author,
+      recipe_ingredients: ingredients,
+      recipe_directions: steps,
+      recipe_image: picture,
     };
 
-    console.log("Server Log: " + JSON.stringify(recipeData));
+    // console.log("Server Log: " + JSON.stringify(recipeData));
 
- 
+    axios.defaults.baseURL = 'http://localhost:8000';
+    axios
+      .post("/test", recipeData) //the endpoint to send the post request + the data to send
+      .then((res) => {
+        console.log(res.data); // Log the response data to the console
+      })
+      .catch((err) => {
+        console.error(err); // Log any errors
+      });
 
     // window.location.replace("http://www.w3schools.com");
-
-
   };
 
   return (
