@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors'); // for cross orgin requests
-const bodyParser = require('body-parser'); // fot handling request body
+const bodyParser = require('body-parser'); // for handling request body
 const app = express();
 
 app.use(cors());  // Enable CORS for all routes
