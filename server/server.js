@@ -3,6 +3,11 @@ const cors = require('cors'); // for cross orgin requests
 const bodyParser = require('body-parser'); // for handling request body
 const MongoClient = require('mongodb').MongoClient;
 
+const dotenv = require('dotenv'); //for env variables
+
+dotenv.config();
+
+
 const app = express();
 
 app.use(cors());  // Enable CORS for all routes
@@ -10,7 +15,7 @@ app.use(cors());  // Enable CORS for all routes
 app.use(bodyParser.json());  // Parse JSON request bodies
 
 
-const url = 'mongodb+srv://admin:<password>@recipelydb.6vyvmcg.mongodb.net/?retryWrites=true&w=majority';
+const url = process.env.MONGODB_URI;
 
 app.get('/test-connection', (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
