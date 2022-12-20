@@ -1,13 +1,41 @@
 const express = require('express');
 const cors = require('cors'); // for cross orgin requests
 const bodyParser = require('body-parser'); // for handling request body
+const MongoClient = require('mongodb').MongoClient;
+
 const app = express();
 
 app.use(cors());  // Enable CORS for all routes
 
 app.use(bodyParser.json());  // Parse JSON request bodies
 
-console.log("The server is working");
+
+const url = 'mongodb+srv://admin:<password>@recipelydb.6vyvmcg.mongodb.net/?retryWrites=true&w=majority';
+
+app.get('/test-connection', (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error connecting to database');
+      return;
+    }
+
+    const db = client.db('testdb');
+    const collection = db.collection('testcol');
+
+    // Perform an operation on the collection, such as finding all documents
+    collection.find({}).toArray((err, documents) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error performing operation on collection');
+        return;
+      }
+
+      // Return the result to the client
+      res.send(documents);
+    });
+  });
+});
 
 
 app.get('/', (req, res) => {
