@@ -27,13 +27,9 @@ app.listen(8000, () => {
 
 
 
-
-
 // Alternatively, you can specify a specific origin or list of origins to allow by passing an options object to the cors() function. For example:
 
 // app.use(cors({ origin: 'http://localhost:3000' }));  // Allow requests from localhost:3000
-
-
 
 
 // ccess to XMLHttpRequest at 'http://localhost:8000/test' from origin 'http://localhost:3000' has been blocked by 
