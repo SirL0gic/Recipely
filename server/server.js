@@ -7,6 +7,9 @@ app.use(cors());  // Enable CORS for all routes
 
 app.use(bodyParser.json());  // Parse JSON request bodies
 
+console.log("The server is working");
+
+
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
