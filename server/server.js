@@ -15,7 +15,7 @@ app.use(cors());  // Enable CORS for all routes
 app.use(bodyParser.json());  // Parse JSON request bodies
 
 
-const url = process.env.MONGODB_URI;
+const url = process.env.MONGODB_URI; //from .env
 
 app.get('/test-connection', (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
