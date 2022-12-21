@@ -47,6 +47,7 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
+
 app.post('/test', (req, res) => {
   const data = req.body; //the request coming in from the front end
   // console.log(data);  // Log the data to the console
