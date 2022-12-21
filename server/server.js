@@ -38,6 +38,26 @@ app.get('/test-connection', (req, res) => {
 
       // Return the result to the client
       res.send(documents);
+      client.close();
+    });
+
+    const user = {
+       name: "John",
+        age: 25 
+      };
+
+      const recipeData = {
+        recipe_name: title,
+        recipe_author: author,
+        recipe_ingredients: ingredients,
+        recipe_directions: steps,
+        recipe_image: picture,
+      };
+      
+    // Insert the new document into the "users" collection
+    collection.insertOne(user, function(err, res) {
+      console.log("Document inserted");
+      client.close();
     });
   });
 });
