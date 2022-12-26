@@ -1,21 +1,24 @@
+// Importing node modules
 const express = require('express');
 const cors = require('cors'); // for cross orgin requests
 const bodyParser = require('body-parser'); // for handling request body
 const MongoClient = require('mongodb').MongoClient;
 
-const dotenv = require('dotenv'); //for env variables
-
+// Env variables such as passwords
+const dotenv = require('dotenv'); 
 dotenv.config();
 
 
 const app = express();
 
-app.use(cors());  // Enable CORS for all routes
+// Enable CORS for all routes
+app.use(cors());
 
-app.use(bodyParser.json());  // Parse JSON request bodies
+// Parse JSON request bodies
+app.use(bodyParser.json());  
 
-
-const url = process.env.MONGODB_URI; //from .env
+//The password for mongo db is retrieved from the .env file
+const url = process.env.MONGODB_URI; 
 
 app.get('/test-connection', (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
@@ -38,7 +41,7 @@ app.get('/test-connection', (req, res) => {
 
       // Return the result to the client
       res.send(documents);
-      client.close();
+      // client.close(); do not close
     });
 
     const user = {
@@ -61,7 +64,7 @@ app.get('/test-connection', (req, res) => {
       };
       
     // Insert the new document into the "users" collection
-    collection.insertOne(user, function(err, res) {
+    collection.insertOne(recipeData, function(err, res) {
       console.log("Document inserted");
       console.log(res);
       client.close();
