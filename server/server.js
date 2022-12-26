@@ -1,5 +1,5 @@
 // Importing node modules
-const express = require('express');
+const express = require('express'); // To use express
 const cors = require('cors'); // for cross orgin requests
 const bodyParser = require('body-parser'); // for handling request body
 const MongoClient = require('mongodb').MongoClient;
@@ -86,6 +86,10 @@ app.post('/test', (req, res) => {
   console.log("this is the data",data);
 
   res.send({ message: 'Data received' });  // Send a response back to the frontend
+});
+
+app.post('/send-recipe-data',(req,res) => {
+  
 });
 
 app.listen(8000, () => {
