@@ -41,33 +41,7 @@ app.get('/test-connection', (req, res) => {
 
       // Return the result to the client
       res.send(documents);
-      // client.close(); do not close
-    });
-
-    const user = {
-       name: "mike",
-        age: 26 
-      };
-
-      var title = "test";
-      var author= "test";
-      var ingredients= "test";
-      var steps= "test";
-      var picture= "test";
-
-      const recipeData = {
-        recipe_name: title,
-        recipe_author: author,
-        recipe_ingredients: ingredients,
-        recipe_directions: steps,
-        recipe_image: picture
-      };
-      
-    // Insert the new document into the "users" collection
-    collection.insertOne(recipeData, function(err, res) {
-      console.log("Document inserted");
-      console.log(res);
-      client.close();
+      client.close(); 
     });
   });
 });
