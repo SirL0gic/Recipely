@@ -20,48 +20,10 @@ app.use(bodyParser.json());
 //The password for mongo db is retrieved from the .env file
 const url = process.env.MONGODB_URI; 
 
-app.get('/test-connection', (req, res) => {
-  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Error connecting to database');
-      return;
-    }
-
-    const db = client.db('testdb');
-    const collection = db.collection('testcol');
-
-    // Perform an operation on the collection, such as finding all documents
-    collection.find({}).toArray((err, documents) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('Error performing operation on collection');
-        return;
-      }
-
-      // Return the result to the client
-      res.send(documents);
-      client.close(); 
-    });
-  });
-});
-
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.send('GET request complete');
 });
-
-
-app.post('/test', (req, res) => {
-  const data = req.body; //the request coming in from the front end
-  // console.log(data);  // Log the data to the console
-
-  // Do something with the data here, such as saving it to a database
-  console.log("this is the data",data);
-
-  res.send({ message: 'Data received' });  // Send a response back to the frontend
-});
-
 
 
 app.post('/send-recipe-data',(req,res) => {
@@ -91,6 +53,45 @@ app.post('/send-recipe-data',(req,res) => {
   res.send({ message: 'Success - Database has been entered' });
 
 });
+
+
+app.get('/all-data', (req, res) => {
+  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error connecting to database');
+      return;
+    }
+
+    const db = client.db('testdb');
+    const collection = db.collection('testcol');
+
+    // Perform an operation on the collection, such as finding all documents
+    collection.find({}).toArray((err, documents) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error performing operation on collection');
+        return;
+      }
+
+      // Return the result to the client
+      res.send(documents);
+      client.close(); 
+    });
+  });
+});
+
+
+app.post('/test', (req, res) => {
+  const data = req.body; //the request coming in from the front end
+  // console.log(data);  // Log the data to the console
+
+  // Do something with the data here, such as saving it to a database
+  console.log("this is the data",data);
+
+  res.send({ message: 'Data received' });  // Send a response back to the frontend
+});
+
 
 app.listen(8000, () => {
   console.log('Server is listening on port 8000');
