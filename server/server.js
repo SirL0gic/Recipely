@@ -114,7 +114,7 @@ app.post('/send-recipe-data',(req,res) => {
   });
 
 
-  res.send({ message: 'Final Insertion comeplete' });
+  res.send({ message: 'Success - Database has been entered' });
 
 });
 
