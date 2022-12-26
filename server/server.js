@@ -88,8 +88,34 @@ app.post('/test', (req, res) => {
   res.send({ message: 'Data received' });  // Send a response back to the frontend
 });
 
+
+
 app.post('/send-recipe-data',(req,res) => {
-  
+
+  const recipeData = req.body;
+
+
+  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error connecting to database');
+      return;
+    }
+
+    const db = client.db('testdb');
+    const collection = db.collection('testcol');
+      
+    // Insert the new document into the "users" collection
+    collection.insertOne(recipeData, function(err, res) {
+      console.log("Document inserted");
+      console.log(res);
+      client.close();
+    });
+  });
+
+
+  res.send({ message: 'Final Insertion comeplete' });
+
 });
 
 app.listen(8000, () => {

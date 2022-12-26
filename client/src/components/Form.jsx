@@ -40,7 +40,7 @@ let RecipeForm = () => {
 
     axios.defaults.baseURL = 'http://localhost:8000';
     axios
-      .post("/test", recipeData) //the endpoint to send the post request + the data to send
+      .post("/send-recipe-data", recipeData) //the endpoint to send the post request + the data to send
       .then((res) => {
         console.log(res.data); // Log the response data to the console
       })
