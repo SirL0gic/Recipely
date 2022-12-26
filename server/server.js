@@ -42,21 +42,28 @@ app.get('/test-connection', (req, res) => {
     });
 
     const user = {
-       name: "John",
-        age: 25 
+       name: "mike",
+        age: 26 
       };
+
+      var title = "test";
+      var author= "test";
+      var ingredients= "test";
+      var steps= "test";
+      var picture= "test";
 
       const recipeData = {
         recipe_name: title,
         recipe_author: author,
         recipe_ingredients: ingredients,
         recipe_directions: steps,
-        recipe_image: picture,
+        recipe_image: picture
       };
       
     // Insert the new document into the "users" collection
     collection.insertOne(user, function(err, res) {
       console.log("Document inserted");
+      console.log(res);
       client.close();
     });
   });
