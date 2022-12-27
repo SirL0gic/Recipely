@@ -19,10 +19,12 @@ app.use(bodyParser.json());
 //The password for mongo db is retrieved from the .env file
 const url = process.env.MONGODB_URI;
 
+
 app.get("/", (req, res) => {
-  res.send("GET request complete");
+  res.send("Server is working");
 });
 
+//Endpoint to process new recipe data 
 app.post("/send-recipe-data", (req, res) => {
   const recipeData = req.body;
 
@@ -50,6 +52,7 @@ app.post("/send-recipe-data", (req, res) => {
   });
 });
 
+//Endpoint to fetch all data from the DB. 
 app.get("/all-data", (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
@@ -76,6 +79,8 @@ app.get("/all-data", (req, res) => {
   });
 });
 
+
+//End point for learning purposes only. 
 app.post("/test", (req, res) => {
   const data = req.body; //the request coming in from the front end
   // console.log(data);  // Log the data to the console
@@ -88,6 +93,7 @@ app.post("/test", (req, res) => {
   }); // Send a response back to the frontend
 });
 
+// Starting the server.
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
 });

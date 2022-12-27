@@ -31,9 +31,7 @@ let SearchBar = () => {
     recipe_name: title,
     };
 
-    console.log("Server Log: " + JSON.stringify(recipeData));
-
-
+    //function to remove current items from the page
     function removeElementsByClass(className){
         const elements = document.getElementsByClassName(className);
         while(elements.length > 0){
@@ -43,15 +41,10 @@ let SearchBar = () => {
 
     removeElementsByClass("cols");
 
-    
+
+    //The component that matches the search query is rendered.
     ReactDOM.render(<RecipeReviewCard />, document.getElementById('recipe-cardslist'));
    
-
-    
-    // fetch('http://localhost:3000/db.json')
-    // .then((response) => response.json())
-    // .then((json) => console.log(json));
-
     // window.location.replace("http://www.w3schools.com");
 
 
@@ -59,7 +52,7 @@ let SearchBar = () => {
 
   return (
     <Form className="form-container" onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3">
         <Form.Control
           type="text"
           placeholder="Search for Food"
