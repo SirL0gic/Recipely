@@ -28,20 +28,18 @@ let RecipeForm = () => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState('');
   const [fileSize, setFileSize] = useState(0);
+  const [meta, setPath] = useState("");
 
   const handleChange = (event) => {
     const file = event.target.files[0];
     setFile(file);
     setFileName(file.name);
     setFileSize(file.size);
-
+    setPath(file.path);
   }
 
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();  //to prevent refresh
-
-    const formData = new FormData();
-    formData.append('file', file);
 
 
     const recipeData = {
@@ -52,6 +50,7 @@ let RecipeForm = () => {
       recipe_image: fileName,
       recipe_image_size: fileSize,
       recipe_file: file,
+      metaa: meta
     };
 
     console.log("Data submitted");
