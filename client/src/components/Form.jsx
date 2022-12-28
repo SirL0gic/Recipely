@@ -37,7 +37,11 @@ let RecipeForm = () => {
   }
 
   let handleSubmit = (eventobject) => {
-    eventobject.preventDefault();
+    eventobject.preventDefault();  //to prevent refresh
+
+    const formData = new FormData();
+    formData.append('file', file);
+
     console.log("Data submitted");
 
 

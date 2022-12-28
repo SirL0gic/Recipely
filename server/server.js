@@ -2,7 +2,8 @@
 const express = require("express"); // To use express
 const cors = require("cors"); // for cross orgin requests
 const bodyParser = require("body-parser"); // for handling request body
-const MongoClient = require("mongodb").MongoClient;
+const MongoClient = require("mongodb").MongoClient; //for mongodb
+const fs = require('fs'); // file system lib
 
 // Env variables such as passwords
 const dotenv = require("dotenv");
@@ -26,7 +27,27 @@ app.get("/", (req, res) => {
 
 //Endpoint to process new recipe data 
 app.post("/send-recipe-data", (req, res) => {
+
   const recipeData = req.body;
+  const filePath = req.body.recipe_file;
+
+  console.log(filePath);console.log(typeof(filePath));
+
+  fs.readFile(filePath, 'utf8', (error, fdata) => {
+    if (error) {
+      res.status(500).send({
+        success: false,
+        message: error.message,
+      });
+    } else {
+      console.log(fdata); // output the file contents to the console
+      res.send({
+        success: true,
+        fdata: fdata,
+      });
+    }
+  });
+  
 
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
@@ -40,7 +61,6 @@ app.post("/send-recipe-data", (req, res) => {
 
     // Insert the new document into the "users" collection
     collection.insertOne(recipeData, function (err, res) {
-      console.log(typeof(recipeData.recipe_file))
       console.log("There is an error:", err);
       console.log("Document inserted");
       console.log(res); // response from mongo db
@@ -108,3 +128,6 @@ app.listen(8000, () => {
 
 // It looks like you are experiencing a CORS (Cross-Origin Resource Sharing) error. This error
 // occurs when a web browser blocks a request made by a script running on one origin (website) to a resource on a different origin.
+
+
+
