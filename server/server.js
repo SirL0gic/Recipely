@@ -4,6 +4,10 @@ const cors = require("cors"); // for cross orgin requests
 const bodyParser = require("body-parser"); // for handling request body
 const MongoClient = require("mongodb").MongoClient; //for mongodb
 const fs = require('fs'); // file system lib
+const router = express.Router(); //for routes and advanced endpoint
+const multer = require('multer'); //for file handling
+const upload = multer();
+
 
 // Env variables such as passwords
 const dotenv = require("dotenv");
@@ -139,3 +143,4 @@ app.listen(8000, () => {
 
 
 
+module.exports = router;
