@@ -22,11 +22,13 @@ let RecipeForm = () => {
   const [author, setAuthor] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  const [picture, setPic] = useState("");
+  const [picture, setPic] = useState(null);
 
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
+
+   
 
     const recipeData = {
       recipe_name: title,
@@ -94,6 +96,7 @@ let RecipeForm = () => {
         <Form.Label className="form-labels">Upload a picture</Form.Label>
         <Form.Control
           type="file"
+          name="file"
           size="sm"
           value={picture}
           onChange={(e) => setPic(e.target.value)}

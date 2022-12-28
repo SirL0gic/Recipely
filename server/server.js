@@ -40,7 +40,7 @@ app.post("/send-recipe-data", (req, res) => {
 
     // Insert the new document into the "users" collection
     collection.insertOne(recipeData, function (err, res) {
-      console, log("There is an error:", err);
+      console.log("There is an error:", err);
       console.log("Document inserted");
       console.log(res);
       client.close();
