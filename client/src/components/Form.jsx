@@ -22,20 +22,33 @@ let RecipeForm = () => {
   const [author, setAuthor] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  const [picture, setPic] = useState(null);
+  // const [picture, setPic] = useState(null);
+
+
+  const [file, setFile] = useState(null);
+  const [fileName, setFileName] = useState('');
+  const [fileSize, setFileSize] = useState(0);
+
+  const handleChange = (event) => {
+    const file = event.target.files[0];
+    setFile(file);
+    setFileName(file.name);
+    setFileSize(file.size);
+  }
 
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
 
-   
 
     const recipeData = {
       recipe_name: title,
       recipe_author: author,
       recipe_ingredients: ingredients,
       recipe_directions: steps,
-      recipe_image: picture,
+      recipe_image: fileName,
+      recipe_image_size: fileSize,
+      recipe_file: file
     };
 
     // console.log("Server Log: " + JSON.stringify(recipeData));
@@ -98,8 +111,8 @@ let RecipeForm = () => {
           type="file"
           name="file"
           size="sm"
-          value={picture}
-          onChange={(e) => setPic(e.target.value)}
+          // value={picture}
+          onChange={handleChange}
         />
       </Form.Group>
       <div className="text-center">

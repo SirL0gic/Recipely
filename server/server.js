@@ -40,9 +40,10 @@ app.post("/send-recipe-data", (req, res) => {
 
     // Insert the new document into the "users" collection
     collection.insertOne(recipeData, function (err, res) {
+      console.log(typeof(recipeData.recipe_file))
       console.log("There is an error:", err);
       console.log("Document inserted");
-      console.log(res);
+      console.log(res); // response from mongo db
       client.close();
     });
   });
