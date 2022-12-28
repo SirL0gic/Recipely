@@ -34,6 +34,7 @@ let RecipeForm = () => {
     setFile(file);
     setFileName(file.name);
     setFileSize(file.size);
+
   }
 
   let handleSubmit = (eventobject) => {
@@ -41,8 +42,6 @@ let RecipeForm = () => {
 
     const formData = new FormData();
     formData.append('file', file);
-
-    console.log("Data submitted");
 
 
     const recipeData = {
@@ -52,8 +51,10 @@ let RecipeForm = () => {
       recipe_directions: steps,
       recipe_image: fileName,
       recipe_image_size: fileSize,
-      recipe_file: file
+      recipe_file: file,
     };
+
+    console.log("Data submitted");
 
     // console.log("Server Log: " + JSON.stringify(recipeData));
 

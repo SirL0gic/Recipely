@@ -29,24 +29,32 @@ app.get("/", (req, res) => {
 app.post("/send-recipe-data", (req, res) => {
 
   const recipeData = req.body;
-  const filePath = req.body.recipe_file;
+  
+  // const filePath = req.body.filePath;
 
-  console.log(filePath);console.log(typeof(filePath));
+  // console.log(filePath);
 
-  fs.readFile(filePath, 'utf8', (error, fdata) => {
-    if (error) {
-      res.status(500).send({
-        success: false,
-        message: error.message,
-      });
-    } else {
-      console.log(fdata); // output the file contents to the console
-      res.send({
-        success: true,
-        fdata: fdata,
-      });
-    }
-  });
+  // if (typeof filePath !== 'string') {
+  //   return res.status(400).send({
+  //     success: false,
+  //     message: 'Invalid file path',
+  //   });
+  // }
+
+  // fs.readFile(filePath, 'utf8', (error, fdata) => {
+  //   if (error) {
+  //     res.status(500).send({
+  //       success: false,
+  //       message: error.message,
+  //     });
+  //   } else {
+  //     console.log(fdata); // output the file contents to the console
+  //     res.send({
+  //       success: true,
+  //       fdata: fdata,
+  //     });
+  //   }
+  // });
   
 
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
