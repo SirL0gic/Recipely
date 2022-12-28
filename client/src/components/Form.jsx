@@ -25,21 +25,28 @@ let RecipeForm = () => {
   // const [picture, setPic] = useState(null);
 
 
+  // const [file, setFile] = useState(null);
+  // const [fileName, setFileName] = useState('');
+  // const [fileSize, setFileSize] = useState(0);
+  // const [meta, setPath] = useState("");
+
+
   const [file, setFile] = useState(null);
-  const [fileName, setFileName] = useState('');
-  const [fileSize, setFileSize] = useState(0);
-  const [meta, setPath] = useState("");
+  const [imageUrl, setImageUrl] = useState('');
 
   const handleChange = (event) => {
-    const file = event.target.files[0];
-    setFile(file);
-    setFileName(file.name);
-    setFileSize(file.size);
-    setPath(file.path);
+    setFile(event.target.files[0]);
   }
 
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();  //to prevent refresh
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setImageUrl(event.target.result);
+    }
+    
+    console.log(reader.readAsDataURL(file));
 
 
     const recipeData = {
@@ -47,10 +54,9 @@ let RecipeForm = () => {
       recipe_author: author,
       recipe_ingredients: ingredients,
       recipe_directions: steps,
-      recipe_image: fileName,
-      recipe_image_size: fileSize,
-      recipe_file: file,
-      metaa: meta
+      recipe_image: file,
+      recipe_image_also: imageUrl,
+    
     };
 
     console.log("Data submitted");

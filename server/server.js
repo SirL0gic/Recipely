@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 app.post("/send-recipe-data", (req, res) => {
 
   const recipeData = req.body;
-  
+
   // const filePath = req.body.filePath;
 
   // console.log(filePath);
@@ -64,7 +64,7 @@ app.post("/send-recipe-data", (req, res) => {
       return;
     }
 
-    const db = client.db("testdb");
+    const db = client.db("test");
     const collection = db.collection("testcol");
 
     // Insert the new document into the "users" collection
