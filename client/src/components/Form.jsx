@@ -23,21 +23,17 @@ let RecipeForm = () => {
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
   // const [picture, setPic] = useState(null);
-
   const [file, setFile] = useState(null);
-  // const [fileName, setFileName] = useState('');
-  // const [fileSize, setFileSize] = useState(0);
-  // const [meta, setPath] = useState("");
+
 
   const handleChange = (event) => {
-    // setFile(event.target.files[0]);
-    const file = event.target.files[0];
+    setFile(event.target.files[0]);
+    // const file = event.target.files[0];
   };
 
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault(); //to prevent refresh
 
-    const file = eventobject.target.files[0];
     const formData = new FormData();
     formData.append("image", file);
 
@@ -46,7 +42,7 @@ let RecipeForm = () => {
       recipe_author: author,
       recipe_ingredients: ingredients,
       recipe_directions: steps,
-      recipe_image: formData,
+      recipe_image: file.name,
     };
 
     console.log("Data submitted");

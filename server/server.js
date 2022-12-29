@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Server is working");
 });
 
-// configure multer
+// configure multer //NIMP
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/');
@@ -63,10 +63,14 @@ app.post("/send-recipe-data", upload.single('image'), (req, res) => {
     collection.insertOne(recipeData, function (err, res) {
       console.log("There is an error:", err);
       console.log("Document inserted");
+      console.log(JSON.stringify(recipeData.recipe_image, null, 2));
       console.log(res); // response from mongo db
       client.close();
     });
+
   });
+
+  
 
   res.send({
     message: "Success - Database has been entered",
