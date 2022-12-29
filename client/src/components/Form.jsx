@@ -17,18 +17,15 @@ import "../styles/create.css";
 
 let RecipeForm = () => {
   // e is the event object
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  // const [picture, setPic] = useState(null);
   const [file, setFile] = useState(null);
-
 
   const handleChange = (event) => {
     setFile(event.target.files[0]);
-    // const file = event.target.files[0];
+    
   };
 
   let handleSubmit = (eventobject) => {
