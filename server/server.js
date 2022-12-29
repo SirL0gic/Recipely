@@ -6,7 +6,7 @@ const MongoClient = require("mongodb").MongoClient; //for mongodb
 const fs = require('fs'); // file system lib
 const router = express.Router(); //for routes and advanced endpoint
 const multer = require('multer'); //for file handling
-const upload = multer();
+
 
 
 // Env variables such as passwords
@@ -29,37 +29,25 @@ app.get("/", (req, res) => {
   res.send("Server is working");
 });
 
+// configure multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage });
+
 //Endpoint to process new recipe data 
-app.post("/send-recipe-data", (req, res) => {
+app.post("/send-recipe-data", upload.single('image'), (req, res) => {
 
   const recipeData = req.body;
 
-  // const filePath = req.body.filePath;
-
-  // console.log(filePath);
-
-  // if (typeof filePath !== 'string') {
-  //   return res.status(400).send({
-  //     success: false,
-  //     message: 'Invalid file path',
-  //   });
-  // }
-
-  // fs.readFile(filePath, 'utf8', (error, fdata) => {
-  //   if (error) {
-  //     res.status(500).send({
-  //       success: false,
-  //       message: error.message,
-  //     });
-  //   } else {
-  //     console.log(fdata); // output the file contents to the console
-  //     res.send({
-  //       success: true,
-  //       fdata: fdata,
-  //     });
-  //   }
-  // });
-  
+  // the image is now available in req.file
+  // The upload.single('image') middleware processes the file upload and saves it to the specified directory. You can then access the uploaded file in the request object (req.file).
+  var x = req.file;
 
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
