@@ -24,27 +24,22 @@ let RecipeForm = () => {
   const [steps, setSteps] = useState("");
   // const [picture, setPic] = useState(null);
 
-
   const [file, setFile] = useState(null);
   // const [fileName, setFileName] = useState('');
   // const [fileSize, setFileSize] = useState(0);
   // const [meta, setPath] = useState("");
 
-
-
-
   const handleChange = (event) => {
-    setFile(event.target.files[0]);
-  }
+    // setFile(event.target.files[0]);
+    const file = event.target.files[0];
+  };
 
   let handleSubmit = (eventobject) => {
-    eventobject.preventDefault();  //to prevent refresh
+    eventobject.preventDefault(); //to prevent refresh
 
-    eventobject.preventDefault();
+    const file = eventobject.target.files[0];
     const formData = new FormData();
-    formData.append('file', file);
-  
-
+    formData.append("image", file);
 
     const recipeData = {
       recipe_name: title,
@@ -58,7 +53,7 @@ let RecipeForm = () => {
 
     // console.log("Server Log: " + JSON.stringify(recipeData));
 
-    axios.defaults.baseURL = 'http://localhost:8000';
+    axios.defaults.baseURL = "http://localhost:8000";
     axios
       .post("/send-recipe-data", recipeData) //the endpoint to send the post request + the data to send
       .then((res) => {
