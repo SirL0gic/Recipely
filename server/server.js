@@ -3,11 +3,7 @@ const express = require("express"); // To use express
 const cors = require("cors"); // for cross orgin requests
 const bodyParser = require("body-parser"); // for handling request body
 const MongoClient = require("mongodb").MongoClient; //for mongodb
-const fs = require('fs'); // file system lib
-const router = express.Router(); //for routes and advanced endpoint
-const multer = require('multer'); //for file handling
-
-
+const fs = require("fs"); // file system lib
 
 // Env variables such as passwords
 const dotenv = require("dotenv");
@@ -24,30 +20,13 @@ app.use(bodyParser.json());
 //The password for mongo db is retrieved from the .env file
 const url = process.env.MONGODB_URI;
 
-
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
 
-// configure multer //NIMP
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
-const upload = multer({ storage });
-
-//Endpoint to process new recipe data 
-app.post("/send-recipe-data", upload.single('image'), (req, res) => {
-
+//Endpoint to process new recipe data
+app.post("/send-recipe-data", (req, res) => {
   const recipeData = req.body;
-
-  // the image is now available in req.file
-  // The upload.single('image') middleware processes the file upload and saves it to the specified directory. You can then access the uploaded file in the request object (req.file).
-  var x = req.file;
 
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
@@ -67,17 +46,14 @@ app.post("/send-recipe-data", upload.single('image'), (req, res) => {
       console.log(res); // response from mongo db
       client.close();
     });
-
   });
-
-  
 
   res.send({
     message: "Success - Database has been entered",
   });
 });
 
-//Endpoint to fetch all data from the DB. 
+//Endpoint to fetch all data from the DB.
 app.get("/all-data", (req, res) => {
   MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
@@ -104,8 +80,7 @@ app.get("/all-data", (req, res) => {
   });
 });
 
-
-//End point for learning purposes only. 
+//End point for learning purposes only.
 app.post("/test", (req, res) => {
   const data = req.body; //the request coming in from the front end
   // console.log(data);  // Log the data to the console
@@ -117,9 +92,6 @@ app.post("/test", (req, res) => {
     message: "Data received",
   }); // Send a response back to the frontend
 });
-
-
-
 
 // Starting the server.
 app.listen(8000, () => {
@@ -135,7 +107,3 @@ app.listen(8000, () => {
 
 // It looks like you are experiencing a CORS (Cross-Origin Resource Sharing) error. This error
 // occurs when a web browser blocks a request made by a script running on one origin (website) to a resource on a different origin.
-
-
-
-module.exports = router;

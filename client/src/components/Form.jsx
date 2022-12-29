@@ -16,7 +16,6 @@ import axios from "axios";
 import "../styles/create.css";
 
 let RecipeForm = () => {
-  // e is the event object
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [ingredients, setIngredients] = useState("");
@@ -43,8 +42,6 @@ let RecipeForm = () => {
     };
 
     console.log("Data submitted");
-
-    // console.log("Server Log: " + JSON.stringify(recipeData));
 
     axios.defaults.baseURL = "http://localhost:8000";
     axios
