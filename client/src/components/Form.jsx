@@ -28,6 +28,7 @@ let RecipeForm = () => {
   };
 
   let handleSubmit = (eventobject) => {
+    
     eventobject.preventDefault(); //to prevent refresh
 
     const formData = new FormData();
