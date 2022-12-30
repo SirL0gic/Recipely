@@ -21,7 +21,6 @@ app.use(bodyParser.json());
 //The password for mongo db is retrieved from the .env file
 const url = process.env.MONGODB_URI;
 
-
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
