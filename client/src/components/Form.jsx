@@ -21,21 +21,9 @@ let RecipeForm = () => {
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
   const [file, setFile] = useState(null);
-  const [imageBuffer, setImageBuffer] = useState(null);
 
   const handleChange = (event) => {
     setFile(event.target.files[0]);
-
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      // The `result` property of the FileReader contains the image data as a buffer
-      setImageBuffer(reader.result);
-      // You can send the image data to the backend using an HTTP request
-    };
-  
-    reader.readAsArrayBuffer(file);
-
   };
 
   let handleSubmit = (eventobject) => {
@@ -50,7 +38,6 @@ let RecipeForm = () => {
       recipe_ingredients: ingredients,
       recipe_directions: steps,
       recipe_image: file.name,
-      image_buffer: imageBuffer,
     };
 
     console.log("Data submitted");
