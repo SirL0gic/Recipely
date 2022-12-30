@@ -4,6 +4,7 @@ const cors = require("cors"); // for cross orgin requests
 const bodyParser = require("body-parser"); // for handling request body
 const MongoClient = require("mongodb").MongoClient; //for mongodb
 const fs = require("fs"); // file system lib
+const request = require('request');
 
 // Env variables such as passwords
 const dotenv = require("dotenv");
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 
 //The password for mongo db is retrieved from the .env file
 const url = process.env.MONGODB_URI;
+
 
 app.get("/", (req, res) => {
   res.send("Server is working");

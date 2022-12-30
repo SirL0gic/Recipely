@@ -24,11 +24,9 @@ let RecipeForm = () => {
 
   const handleChange = (event) => {
     setFile(event.target.files[0]);
-    
   };
 
   let handleSubmit = (eventobject) => {
-    
     eventobject.preventDefault(); //to prevent refresh
 
     const formData = new FormData();
