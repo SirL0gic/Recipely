@@ -13,7 +13,7 @@
 // import axios from "axios";
 
 // //Custom CSS stylesheet
-// import "../styles/create.css";
+import "../styles/form.css";
 
 // let RecipeForm = () => {
 //   const [title, setTitle] = useState("");
