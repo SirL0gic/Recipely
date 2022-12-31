@@ -27,9 +27,10 @@ let SearchBar = () => {
   let handleSubmit = (eventobject) => {
     eventobject.preventDefault();
     console.log("Data submitted");
-    const recipeData = { 
-    recipe_name: title,
-    };
+    
+    // const recipeData = { 
+    // recipe_name: title,
+    // };
 
     //function to remove current items from the page
     function removeElementsByClass(className){

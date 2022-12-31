@@ -63,7 +63,7 @@ app.get("/all-data", (req, res) => {
       return;
     }
 
-    const db = client.db("testdb");
+    const db = client.db("test");
     const collection = db.collection("testcol");
 
     // Perform an operation on the collection, such as finding all documents
