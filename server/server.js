@@ -43,7 +43,6 @@ app.post("/send-recipe-data", (req, res) => {
     collection.insertOne(recipeData, function (err, res) {
       console.log("There is an error:", err);
       console.log("Document inserted");
-      console.log(JSON.stringify(recipeData.recipe_image, null, 2));
       console.log(res); // response from mongo db
       client.close();
     });

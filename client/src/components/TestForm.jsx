@@ -34,6 +34,7 @@ const RecipeForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData);
 
     axios.post('/api/recipes', formData)
       .then((response) => {

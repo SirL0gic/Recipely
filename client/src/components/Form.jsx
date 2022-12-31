@@ -156,8 +156,10 @@ const RecipeForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData);
 
-    axios.post('/api/recipes', formData)
+    axios.defaults.baseURL = "http://localhost:8000";
+    axios.post('/send-recipe-data', formData)
       .then((response) => {
         console.log(response);
       })
