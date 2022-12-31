@@ -119,26 +119,25 @@
 
 // export default RecipeForm;
 
-
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const RecipeForm = () => {
   const [formData, setFormData] = useState({
-    author: '',
-    name: '',
-    ingredients: '',
-    directions: '',
-    image: null
+    author: "",
+    name: "",
+    ingredients: "",
+    directions: "",
+    image: null,
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
-  }
+  };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -147,47 +146,68 @@ const RecipeForm = () => {
     reader.onloadend = () => {
       setFormData((prevState) => ({
         ...prevState,
-        image: reader.result
+        image: reader.result,
       }));
-    }
+    };
 
     reader.readAsArrayBuffer(file);
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
 
     axios.defaults.baseURL = "http://localhost:8000";
-    axios.post('/send-recipe-data', formData)
+    axios
+      .post("/send-recipe-data", formData)
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
         console.error(error);
       });
-  }
+
+   
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Author:
-        <input type="text" name="author" value={formData.author} onChange={handleChange} />
+        <input
+          type="text"
+          name="author"
+          value={formData.author}
+          onChange={handleChange}
+        />
       </label>
       <br />
       <label>
         Recipe name:
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
       </label>
       <br />
       <label>
         Ingredients:
-        <textarea name="ingredients" value={formData.ingredients} onChange={handleChange} />
+        <textarea
+          name="ingredients"
+          value={formData.ingredients}
+          onChange={handleChange}
+        />
       </label>
       <br />
       <label>
         Directions:
-        <textarea name="directions" value={formData.directions} onChange={handleChange} />
+        <textarea
+          name="directions"
+          value={formData.directions}
+          onChange={handleChange}
+        />
       </label>
       <br />
       <label>
@@ -198,6 +218,6 @@ const RecipeForm = () => {
       <button type="submit">Submit</button>
     </form>
   );
-}
+};
 
 export default RecipeForm;
