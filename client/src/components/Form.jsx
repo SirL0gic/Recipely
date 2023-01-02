@@ -166,8 +166,6 @@ const RecipeForm = () => {
       .catch((error) => {
         console.error(error);
       });
-
-   
   };
 
   return (
