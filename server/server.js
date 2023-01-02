@@ -6,26 +6,26 @@ const MongoClient = require("mongodb").MongoClient; //for mongodb
 const fs = require("fs"); // file system lib
 const request = require("request");
 
-// Env variables such as passwords
+// Env variables such as passwords.
 const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
 
-// Enable CORS for all routes
+// Enable CORS for all routes.
 app.use(cors());
 
-// Parse JSON request bodies
+// Parse JSON request bodies.
 app.use(bodyParser.json());
 
-//The password for mongo db is retrieved from the .env file
+//The password for mongo db is retrieved from the .env file.
 const url = process.env.MONGODB_URI;
 
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
 
-//Endpoint to process new recipe data
+//Endpoint to process new recipe data.
 app.post("/send-recipe-data", (req, res) => {
   const recipeData = req.body;
 
@@ -39,7 +39,7 @@ app.post("/send-recipe-data", (req, res) => {
     const db = client.db("test");
     const collection = db.collection("testcol");
 
-    // Insert the new document into the "users" collection
+    // Insert the new document into the "users" collection.
     collection.insertOne(recipeData, function (err, res) {
       console.log("There is an error:", err);
       console.log("Document inserted");
@@ -65,7 +65,7 @@ app.get("/all-data", (req, res) => {
     const db = client.db("test");
     const collection = db.collection("testcol");
 
-    // Perform an operation on the collection, such as finding all documents
+    // Perform an operation on the collection, such as finding all documents.
     collection.find({}).toArray((err, documents) => {
       if (err) {
         console.error(err);
@@ -73,7 +73,7 @@ app.get("/all-data", (req, res) => {
         return;
       }
 
-      // Return the result to the client
+      // Return the result to the client.
       res.send(documents);
       client.close();
     });
@@ -85,12 +85,12 @@ app.post("/test", (req, res) => {
   const data = req.body; //the request coming in from the front end
   // console.log(data);  // Log the data to the console
 
-  // Do something with the data here, such as saving it to a database
+  // Do something with the data here, such as saving it to a database.
   console.log("this is the data", data);
 
   res.send({
     message: "Data received",
-  }); // Send a response back to the frontend
+  }); // Send a response back to the frontend.
 });
 
 // Starting the server.
