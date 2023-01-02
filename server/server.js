@@ -93,7 +93,7 @@ app.post("/test", (req, res) => {
   }); // Send a response back to the frontend.
 });
 
-// Starting the server.
+// Starting the server on port 8000.
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
 });
@@ -102,7 +102,7 @@ app.listen(8000, () => {
 
 // app.use(cors({ origin: 'http://localhost:3000' }));  // Allow requests from localhost:3000
 
-// ccess to XMLHttpRequest at 'http://localhost:8000/test' from origin 'http://localhost:3000' has been blocked by
+// ccess to XMLHttpRequest at 'http://localhost:8000/test' from origin http://localhost:3000 has been blocked by
 // CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 // It looks like you are experiencing a CORS (Cross-Origin Resource Sharing) error. This error
