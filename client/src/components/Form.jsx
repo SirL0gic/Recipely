@@ -2,7 +2,7 @@
 // import React, { useState } from "react";
 
 // //Bootstrap-npm-lib
-// import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import InputGroup from "react-bootstrap/InputGroup";
 
@@ -195,6 +195,7 @@ const RecipeForm = () => {
       <label className="label">
         Ingredients:
         <textarea
+          className="textarea"
           name="ingredients"
           value={formData.ingredients}
           onChange={handleChange}
@@ -204,6 +205,7 @@ const RecipeForm = () => {
       <label className="label">
         Directions:
         <textarea
+         className="textarea"
           name="directions"
           value={formData.directions}
           onChange={handleChange}
@@ -215,7 +217,8 @@ const RecipeForm = () => {
         <input className="input" type="file" name="image" onChange={handleFileChange} />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button className="button" variant="dark" type="submit">Submit</button>
+      
     </form>
   );
 };
