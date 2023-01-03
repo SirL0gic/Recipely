@@ -1,4 +1,4 @@
-form {
+.form {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
@@ -7,15 +7,15 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  label {
+  .label {
     display: block;
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
   }
   
-  input,
-  textarea {
+  .input,
+  .textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -25,12 +25,12 @@ form {
     outline: none;
   }
   
-  input[type="file"] {
+  .input[type="file"] {
     display: block;
     margin-top: 10px;
   }
   
-  button {
+  .button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -42,12 +42,12 @@ form {
     cursor: pointer;
   }
   
-  button:hover {
+  .button:hover {
     background-color: #3f9b45;
   }
   
   @media (max-width: 500px) {
-    label {
+    .label {
       font-size: 14px;
     }
   }

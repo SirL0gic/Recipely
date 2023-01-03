@@ -169,8 +169,8 @@ const RecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="label">
         Author:
         <input
           type="text"
@@ -180,7 +180,7 @@ const RecipeForm = () => {
         />
       </label>
       <br />
-      <label>
+      <label className="label">
         Recipe name:
         <input
           type="text"
@@ -190,7 +190,7 @@ const RecipeForm = () => {
         />
       </label>
       <br />
-      <label>
+      <label className="label">
         Ingredients:
         <textarea
           name="ingredients"
@@ -199,7 +199,7 @@ const RecipeForm = () => {
         />
       </label>
       <br />
-      <label>
+      <label className="label">
         Directions:
         <textarea
           name="directions"
@@ -208,7 +208,7 @@ const RecipeForm = () => {
         />
       </label>
       <br />
-      <label>
+      <label className="label">
         Image:
         <input type="file" name="image" onChange={handleFileChange} />
       </label>
