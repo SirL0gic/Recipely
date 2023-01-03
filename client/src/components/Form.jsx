@@ -2,7 +2,7 @@
 // import React, { useState } from "react";
 
 // //Bootstrap-npm-lib
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 // import Form from "react-bootstrap/Form";
 // import InputGroup from "react-bootstrap/InputGroup";
 
@@ -217,7 +217,7 @@ const RecipeForm = () => {
         <input className="input" type="file" name="image" onChange={handleFileChange} />
       </label>
       <br />
-      <button className="button" variant="dark" type="submit">Submit</button>
+      <button className="button" type="submit">Submit</button>
       
     </form>
   );
