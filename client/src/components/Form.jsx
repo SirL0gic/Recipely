@@ -173,6 +173,7 @@ const RecipeForm = () => {
       <label className="label">
         Author:
         <input
+          className="input"
           type="text"
           name="author"
           value={formData.author}
@@ -183,6 +184,7 @@ const RecipeForm = () => {
       <label className="label">
         Recipe name:
         <input
+          className="input"
           type="text"
           name="name"
           value={formData.name}
@@ -210,7 +212,7 @@ const RecipeForm = () => {
       <br />
       <label className="label">
         Image:
-        <input type="file" name="image" onChange={handleFileChange} />
+        <input className="input" type="file" name="image" onChange={handleFileChange} />
       </label>
       <br />
       <button type="submit">Submit</button>
