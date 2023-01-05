@@ -41,6 +41,18 @@
     font-weight: 600;
     cursor: pointer;
   }
+
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
   
   .button:hover {
     background-color: #3f9b45;
