@@ -19,7 +19,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-
 // The password for mongo db is retrieved from the .env file.
 const url = process.env.MONGODB_URI;
 
@@ -82,6 +81,7 @@ app.get("/all-data", (req, res) => {
   });
 });
 
+
 //End point for learning purposes only.
 app.post("/test", (req, res) => {
   const data = req.body; //the request coming in from the front end
@@ -99,6 +99,7 @@ app.post("/test", (req, res) => {
 app.listen(8000, () => {
   console.log("Server is listening on port 8000");
 });
+
 
 // Alternatively, you can specify a specific origin or list of origins to allow by passing an options object to the cors() function. For example:
 
