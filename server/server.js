@@ -17,6 +17,12 @@ app.use(cors());
 
 // Parse JSON request bodies.
 app.use(bodyParser.json());
+// Parse JSON request bodies.
+app.use(bodyParser.json());
+
+// Parse JSON request bodies.
+app.use(bodyParser.json());
+
 
 // The password for mongo db is retrieved from the .env file.
 const url = process.env.MONGODB_URI;
@@ -24,7 +30,7 @@ const url = process.env.MONGODB_URI;
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
-saxas
+
 // Endpoint to process new recipe data.
 app.post("/send-recipe-data", (req, res) => {
   const recipeData = req.body;
